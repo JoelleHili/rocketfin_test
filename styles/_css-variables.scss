@@ -1,0 +1,34 @@
+@use 'colors' as colors;
+
+:root {
+  --primary: #{colors.$primary};
+  --secondary: #{colors.$secondary};
+  --accent: #{colors.$accent};
+  --success: #{colors.$success};
+  --error: #{colors.$error};
+  --warning: #{colors.$warning};
+  --white: #{colors.$white};
+  --black: #{colors.$black};
+
+  // Add spacing variables
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  // Add font size variables
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  // Add inset shadow variables
+  --container-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  --selected-sidebar-shadow: inset 2px 2px 8px rgba(12, 12, 13, 0.25);
+}

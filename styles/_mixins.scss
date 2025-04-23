@@ -1,0 +1,21 @@
+@use 'variables' as vars;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: vars.$breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: vars.$breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: vars.$breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: vars.$breakpoint-xl) { @content; }
+  }
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}

@@ -1,0 +1,35 @@
+@use '../styles/index' as *;
+
+.main {
+  @include flex(column, center, center, $spacing-xl);
+  padding: $spacing-xl;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  color: var(--secondary);
+  margin-bottom: $spacing-lg;
+  text-align: center;
+  
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.buttons {
+  @include flex(row, center, center, $spacing-md);
+  margin-bottom: $spacing-lg;
+  
+  @include respond-to(sm) {
+    flex-direction: column;
+  }
+}
+
+.apiResponse {
+  padding: $spacing-md;
+  background-color: $accent;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+}
