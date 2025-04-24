@@ -22,7 +22,7 @@ export default function Sidebar() {
                             <Link
                                 href={route.path}
                             >
-                                <div className="sidebar__item">
+                                <div className={`sidebar__item ${pathname == route.path ? "sidebar__item__selected" : ""}`}>
                                     {route.icon}
                                     <span>{route.name}</span>
                                 </div>
