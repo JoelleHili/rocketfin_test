@@ -14,9 +14,27 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: $primary;
+}
+
+h1 {
+  color: $black;
+  font-size: $font-size-md;
+}
+
+text {
+  color: $accent;
+  font-size: $font-size-4xl;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.filler {
+  flex: 0 0 100%;
+  background-color: var(--secondary);
+  box-shadow: var(--container-shadow);
+  border-radius: 8px;
 }
