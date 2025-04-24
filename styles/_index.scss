@@ -1,5 +1,7 @@
 @forward 'colors';
 @forward 'variables';
 @forward 'mixins';
+@forward "layout";
 
-@use "../components/InstrumentSearch/styles/instrumentSearch.scss"
+@use "../components/InstrumentSearch/styles/instrumentSearch.scss";
+@use "../components/Sidebar/Styles/sidebar.scss";

@@ -3,7 +3,7 @@ $base: 'instrument-search';
 .#{$base} {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 90vw;
   height: 92vh;
   gap: 16px;
   border-radius: 8px;
@@ -37,7 +37,7 @@ $base: 'instrument-search';
   }
 
   &__empty {
-    height: 100%;
+    flex: 0 0 100%;
     width: inherit;
     background-color: var(--secondary);
     box-shadow: var(--container-shadow);
