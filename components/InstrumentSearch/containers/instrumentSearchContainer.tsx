@@ -4,29 +4,27 @@ import { useEffect, useState } from "react"
 import InstrumentSearchBar from "../components/instrumentSearchBar"
 import InstrumentSearchResult from "../components/instrumentSearchResult"
 import InstrumentSearchResultEmpty from "../components/instrumentSearchResultEmpty"
-import { useGetInstrumentByTicker } from "../helpers/instrumentSearchCall"
+import { useGetInstrumentByTicker } from "../helpers/useGetInstrumentsByTicker"
 import useDebounce from "@/hooks/useDebounce"
 
 const InstrumentSearchContainer = () => {
 
     const [tickerSearch, setTickerSearch] = useState("")
-    const { data, loading, error, refetch } = useGetInstrumentByTicker({ ticker: tickerSearch })
-    const debounceValue = useDebounce({value: tickerSearch})
+    const debounceValue = useDebounce({ value: tickerSearch })
+    const { data, loading, error, refetch } = useGetInstrumentByTicker({ ticker: debounceValue })
 
     useEffect(() => {
-        if (debounceValue.length >= 3) { refetch() }
+        if (debounceValue.length) { refetch() }
     }, [refetch, debounceValue])
 
     return (
-        <>
+        <div className="instrument-search">
             <InstrumentSearchBar value={tickerSearch} setValue={setTickerSearch} />
-            {debounceValue}
 
-
-            {tickerSearch === "" && <InstrumentSearchResultEmpty message="Please Search Using A Ticker" />}
-            {loading && <InstrumentSearchResultEmpty message="Loading..." />}
-            {error && loading == false && <InstrumentSearchResultEmpty message={error.message} />}
-            {data?.chart.error != null && <InstrumentSearchResultEmpty message={data?.chart.error} />}
+            {debounceValue.length == 0 && <InstrumentSearchResultEmpty message="Please Search Using A Ticker" />}
+            {loading && !data && debounceValue.length != 0 && <InstrumentSearchResultEmpty message="Loading..." />}
+            {error && loading == false && debounceValue.length != 0 && <InstrumentSearchResultEmpty message={error.message} />}
+            {data?.chart.error != null && debounceValue.length != 0 && <InstrumentSearchResultEmpty message={data?.chart.error.code} />}
             {data?.chart.result &&
                 <InstrumentSearchResult
                     instrumentType={data?.chart.result[0].meta.instrumentType}
@@ -37,7 +35,7 @@ const InstrumentSearchContainer = () => {
                     fullExchangeName={data?.chart.result[0].meta.fullExchangeName} />
             }
 
-        </>
+        </div>
     )
 }
 

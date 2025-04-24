@@ -3,7 +3,7 @@
 import { InstrumentSearchResultEmptyTypes } from "../types/instrumentSearchTypes"
 
 const InstrumentSearchResultEmpty = ({message}:InstrumentSearchResultEmptyTypes) => (
-    <div>
+    <div className="instrument-search__empty">
         <span>{message}</span>
     </div>
 )
