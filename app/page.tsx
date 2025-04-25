@@ -1,6 +1,6 @@
 'use client';
 
-import Trending from "@/components/Trending";
+import {Trending, Holdings} from "@/components";
 
 export default function Home() {
 
@@ -8,6 +8,7 @@ export default function Home() {
     <main>
       <div className="page two-column-grid">
         <Trending />
+        <Holdings />
       </div>
     </main>
   );

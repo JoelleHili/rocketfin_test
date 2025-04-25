@@ -1,0 +1,19 @@
+{
+    "result":[
+        {
+            "symbol": "AAPL",
+            "shortName": "Apple Inc.",
+            "ask": 117.27 
+        },
+        {
+            "symbol": "META",
+            "shortName": "Meta Pletforms Inc.",
+            "ask": 90.12
+        },
+        {
+            "symbol": "GOOG",
+            "shortName": "Alphabet Inc.",
+            "ask": 152.54 
+        }  
+    ]
+}
