@@ -19,9 +19,6 @@ class TransactionHistory {
     return TransactionHistory.instance
   }
 
-  /**
-   * Add a new transaction to the history
-   */
   public addTransaction(
     symbol: string,
     shortName: string,
