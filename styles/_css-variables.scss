@@ -31,4 +31,8 @@
   // Add inset shadow variables
   --container-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.25);
   --selected-sidebar-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.05);
+
+  // Dynamic Height and Width
+  --content-height: 90vh;
+  --header-height: 4vh;
 }

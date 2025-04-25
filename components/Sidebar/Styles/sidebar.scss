@@ -2,7 +2,7 @@ $base: 'sidebar';
 
 .#{$base} {
   width: 8vw;
-  height: 92vh;
+  height: var(--content-height);
   background-color: var(--secondary);
   box-shadow: var(--container-shadow);
   padding: 16px;
