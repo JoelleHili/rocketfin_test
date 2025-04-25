@@ -1,23 +1,17 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import HoldingsList from "../components/holdingsList"
-import HoldingsData from "../data/holdingsData.json"
-import { HoldingsTypes } from "../types/holdingsTypes"
+import HoldingsHandler from "@/classes/holdingsHandler"
 
 const HoldingsContainer = () => {
 
-    const [holdings, setHoldings] = useState<Array<HoldingsTypes>>(HoldingsData.result)
-
-    // useEffect(() => {
-    //  setHoldings([])   
-    // }, [holdings])
+    const holdings = HoldingsHandler.getInstance() 
 
     return (
         <div className="holdings widget widget__half">
             <h1>Your Holdings</h1>
 
-            {holdings.length > 0 && <HoldingsList list={holdings} />}
+            {<HoldingsList list={holdings.getHoldings()} />}
         </div>
     )
 }

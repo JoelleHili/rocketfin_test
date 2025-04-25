@@ -1,7 +1,7 @@
 export interface HoldingsTypes{
     symbol: string
     shortName: string
-    ask: number
+    amount: number
 }
 
 export interface HoldingsListTypes{
