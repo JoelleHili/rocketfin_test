@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <main>
       <div className="page two-column-grid">
-        <Trending />
         <Holdings />
+        <Trending />
       </div>
     </main>
   );
