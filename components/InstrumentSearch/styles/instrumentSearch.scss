@@ -4,7 +4,7 @@ $base: 'instrument-search';
   display: flex;
   flex-direction: column;
   width: 89vw;
-  height: 92vh;
+  height: var(--content-height);
   gap: 16px;
   border-radius: 8px;
   overflow-y: hidden;
