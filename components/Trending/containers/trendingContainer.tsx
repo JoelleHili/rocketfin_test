@@ -10,7 +10,7 @@ import TrendingMessage from "../components/trendingMessage"
 const InstrumentSearchContainer = () => {
 
     const { data, error } = useGetTrendingByRegion({ region: "US" })
-    const { data: namesData, loading: loading, error: namesError } = useGetTrendingNames({ trendingList: data?.finance.result[0].quotes.slice(0, 10) })
+    const { data: namesData, loading: loading, error: namesError } = useGetTrendingNames({ trendingList: data?.finance.result[0].quotes.slice(0, 10).map((item: { symbol: string }) => item.symbol).join(',') })
     const [trendingList, setTrendingList] = useState(Array<TrendingTypes>)
 
     useEffect(() => {

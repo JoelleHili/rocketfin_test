@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 
 interface getTrendingNamesTypes {
-  trendingList: Array<string>
+  trendingList: string
 }
 
 interface TrendingNamesResponse {
@@ -29,9 +29,11 @@ export function useGetTrendingNames({ trendingList }: getTrendingNamesTypes) {
 
     try {
       console.log("Trending to Get Names of:", trendingList)
-      const response = await fetch(`${baseUrl}v6/finance/quote?region=US&lang=en&symbols=${trendingList.toString()}`, {
+      const response = await fetch(`${baseUrl}/v6/finance/quote?region=US&lang=en&symbols=${encodeURIComponent(trendingList)}`, {
         headers: { 'X-API-KEY': apiKey },
       })
+
+      console.log("useGetTrendingNames:", response.status)
 
       if (!response.ok) {
         throw new Error(`API error: ${response.status}`)

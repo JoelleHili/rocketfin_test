@@ -5,6 +5,7 @@ $base: 'trending';
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    list-style: none;
   }
 
   &__message {
@@ -25,6 +26,7 @@ $base: 'trending';
       padding: 4px 8px;
       background-color: var(--black);
       color: var(--secondary);
+      border-radius: 8px;
     }
 
     &__name {

@@ -3,10 +3,10 @@
 import { TrendingTypes } from "../types/trendingTypes"
 
 const TrendingEntry = ({symbol, displayName}: TrendingTypes) => (
-    <div className="trending__entry">
+    <a className="trending__entry" href={`/search?${symbol}`}>
         <span className="trending__entry__symbol">{symbol}</span>
         <span className="trending__entry__name">{displayName}</span>
-    </div>
+    </a>
 )
 
 export default TrendingEntry
