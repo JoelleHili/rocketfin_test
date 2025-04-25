@@ -40,5 +40,4 @@ class TransactionHistory {
   }
 }
 
-// Export the class
 export default TransactionHistory
