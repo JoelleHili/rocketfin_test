@@ -7,9 +7,12 @@ import InstrumentSearchResultEmpty from "../components/instrumentSearchResultEmp
 import { useGetInstrumentByTicker } from "../helpers/useGetInstrumentsByTicker"
 import useDebounce from "@/hooks/useDebounce"
 
-const InstrumentSearchContainer = () => {
+interface InstrumentSearchContainerTypes{
+    ticker?: string
+}
 
-    const [tickerSearch, setTickerSearch] = useState("")
+const InstrumentSearchContainer = ({ticker}: InstrumentSearchContainerTypes) => {
+    const [tickerSearch, setTickerSearch] = useState(ticker ||"")
     const debounceValue = useDebounce({ value: tickerSearch })
     const { data, loading, error, refetch } = useGetInstrumentByTicker({ ticker: debounceValue })
 

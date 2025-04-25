@@ -1,11 +1,18 @@
 'use client';
 import InstrumentSearch from '@/components/InstrumentSearch';
+import { useSearchParams } from 'next/navigation';
 
-export default function Search() {
+const Search = () => {
+
+  const searchParams = useSearchParams();
+  
+  const ticker = searchParams.get('ticker');
 
   return (
     <main>
-      <InstrumentSearch/>
+      <InstrumentSearch ticker={ticker || undefined} />
     </main>
   );
 }
+
+export default Search
