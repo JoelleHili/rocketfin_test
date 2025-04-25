@@ -1,14 +1,18 @@
 'use client';
 
-import {Trending, Holdings} from "@/components";
+import { Trending, Holdings, TransactionHistory } from "@/components";
 
 export default function Home() {
 
   return (
     <main>
       <div className="page two-column-grid">
-        <Holdings />
-        <Trending />
+        <div className="column">
+          <Holdings />
+          <Trending />
+        </div>
+        <TransactionHistory />
+
       </div>
     </main>
   );

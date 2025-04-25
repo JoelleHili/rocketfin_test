@@ -22,7 +22,7 @@ const InstrumentSearchContainer = () => {
     }, [data?.finance.result, namesData?.quoteResponse.result])
 
     return (
-        <div className="trending widget">
+        <div className="trending widget widget__half">
             <h1>Trending In The Market</h1>
 
             {loading && !data && <TrendingMessage message="Loading..." />}

@@ -1,0 +1,43 @@
+$base: 'transaction-history';
+
+.#{$base} {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    gap: 16px;
+    list-style: none;
+  }
+
+  &__entry {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: var(--font-size-md);
+
+    &__instrument {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+
+    &__symbol, &__type {
+      padding: 4px 8px;
+      background-color: var(--black);
+      color: var(--secondary);
+      border-radius: 8px;
+    }
+
+    &__bought{
+      background-color: var(--success);
+    }
+
+    &__sold{
+      background-color: var(--error);
+    }
+
+    &__name,  &__amount{
+      color: var(--black);
+    }
+  }
+}

@@ -14,7 +14,7 @@ const HoldingsContainer = () => {
     // }, [holdings])
 
     return (
-        <div className="holdings widget">
+        <div className="holdings widget widget__half">
             <h1>Your Holdings</h1>
 
             {holdings.length > 0 && <HoldingsList list={holdings} />}

@@ -40,8 +40,6 @@ a {
 }
 
 .widget {
-  height: 45vh;
-  width: 93vh;
   background-color: var(--secondary);
   box-shadow: var(--container-shadow);
   border-radius: 8px;
@@ -50,6 +48,16 @@ a {
   gap: 32px;
   padding: 16px;
   align-items: center;
+
+  &__half {
+    height: var(--content-height-half);
+    width: 100%;
+  }
+
+  &__full {
+    height: var(--content-height);
+    width: 100%;
+  }
 }
 
 .page {
@@ -58,9 +66,17 @@ a {
 }
 
 .two-column-grid {
+  width: 89vw;
   grid-template-columns: repeat(2, 1fr);
 }
 
 .three-column-grid {
+  width: 89vw;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
