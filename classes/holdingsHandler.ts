@@ -24,7 +24,7 @@ class HoldingsHandler {
   }
 
   public getHoldings(): HoldingTypes[] {
-    return Array.from(this.holdings.values())
+    return Array.from(this.holdings)
   }
 
   public getHoldingAmount(symbol: string): number {
@@ -83,9 +83,9 @@ class HoldingsHandler {
     holding.amount -= amount
 
     if (holding.amount === 0) {
-      this.holdings
-        .filter((x) => x.symbol.toUpperCase() === symbol.toUpperCase())
-        .pop()
+      this.holdings = this.holdings.filter(
+        (x) => x.symbol.toUpperCase() !== symbol.toUpperCase()
+      )
     }
 
     this.save()
@@ -97,7 +97,7 @@ class HoldingsHandler {
 
       if (storedData) {
         const parsed = JSON.parse(storedData)
-        this.holdings = parsed.map((h: any) => ({
+        this.holdings = parsed.map((h: HoldingTypes[]) => ({
           ...h,
         }))
       }

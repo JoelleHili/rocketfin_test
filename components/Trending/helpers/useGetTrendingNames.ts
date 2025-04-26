@@ -4,13 +4,18 @@ interface getTrendingNamesTypes {
   trendingList: string
 }
 
+interface TrendingErrorTypes {
+  code: string
+  description: string
+}
+
 interface TrendingNamesResponse {
   quoteResponse: {
     result: Array<{
       symbol: string
       displayName: string
     }>
-    error: Record<string, any> | null
+    error: Record<string, TrendingErrorTypes> | null
   }
 }
 

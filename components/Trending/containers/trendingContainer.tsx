@@ -10,8 +10,8 @@ import TrendingMessage from "../components/trendingMessage"
 const InstrumentSearchContainer = () => {
 
     const { data, error } = useGetTrendingByRegion({ region: "US" })
-    const { data: namesData, loading: loading, error: namesError } = useGetTrendingNames({ trendingList: data?.finance.result[0].quotes.slice(0, 10).map((item: { symbol: string }) => item.symbol).join(',') })
-    const [trendingList, setTrendingList] = useState(Array<TrendingTypes>)
+    const { data: namesData, loading: loading, error: namesError } = useGetTrendingNames({ trendingList: data?.finance.result[0].quotes.slice(0, 10).map((item: { symbol: string }) => item.symbol).join(',') || ""})
+    const [trendingList, setTrendingList] = useState<Array<TrendingTypes>>()
 
     useEffect(() => {
         setTrendingList([])
@@ -28,7 +28,7 @@ const InstrumentSearchContainer = () => {
             {loading && !data && <TrendingMessage message="Loading..." />}
             {(namesError || error) && loading == false && <TrendingMessage message={namesError?.message || error?.message || "Error: Unknown Message"} />}
             {data?.finance.error != null && <TrendingMessage message={data?.finance.error.code} />}
-            {trendingList.length > 0 && <TrendingList list={trendingList} />}
+            {trendingList && trendingList.length > 0 && <TrendingList list={trendingList} />}
         </div>
     )
 }

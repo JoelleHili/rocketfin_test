@@ -78,7 +78,7 @@ class TransactionHistory {
 
       if (storedData) {
         const parsed = JSON.parse(storedData)
-        this.transactions = parsed.map((t: any) => ({
+        this.transactions = parsed.map((t: TransactionTypes[]) => ({
           ...t,
         }))
       }
