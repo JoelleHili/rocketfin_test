@@ -2,8 +2,8 @@ $base: 'transaction-history';
 
 .#{$base} {
   &__list {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column-reverse;
     width: 100%;
     gap: 16px;
     list-style: none;
@@ -27,6 +27,7 @@ $base: 'transaction-history';
       color: var(--secondary);
       border-radius: 8px;
       width: 64px;
+      text-align: center;
     }
 
     &__symbol {
@@ -47,6 +48,11 @@ $base: 'transaction-history';
 
     &__name,  &__amount{
       color: var(--black);
+    }
+
+    &__amount{
+      width: 40px;
+      text-align: end;
     }
   }
 }
