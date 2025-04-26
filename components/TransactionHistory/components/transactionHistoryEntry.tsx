@@ -11,9 +11,9 @@ const TransactionHistoryEntry = ({ symbol, shortName, type, amount }: Transactio
         <span className={`transaction-history__entry__type
             ${type == "Bought" ? "transaction-history__entry__bought" : ""}
             ${type == "Sold" ? "transaction-history__entry__sold" : ""}`}>
-            ${type}
+            {type}
         </span>
-        <span className="transaction-history__entry__amount">${amount}</span>
+        <span className="transaction-history__entry__amount">{amount}</span>
     </a>
 )
 

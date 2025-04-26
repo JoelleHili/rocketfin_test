@@ -2,10 +2,10 @@
 
 import { CardTypes } from "../Types/CardTypes"
 
-const Card = ({title, value, className = ""}: CardTypes) => (
+const Card = ({title, child, className = ""}: CardTypes) => (
     <div className={className}>
         <h1>{title}</h1>
-        <text>{value}</text>
+        {child}
     </div>
 )
 
