@@ -1,1 +1,1 @@
-export {default} from "./Components/Card"
+export { default } from "./Components/Card"

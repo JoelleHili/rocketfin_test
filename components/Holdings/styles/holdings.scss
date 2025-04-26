@@ -24,7 +24,7 @@ $base: 'holdings';
     padding: 8px;
     border-radius: 8px;
 
-    &:hover{
+    &:hover {
       box-shadow: var(--selected-sidebar-shadow);
       transition-duration: 0.3s;
       transition-delay: 0.05s;
@@ -46,10 +46,10 @@ $base: 'holdings';
       text-align: center;
     }
 
-    &__name, &__amount {
+    &__name,
+    &__amount {
       color: var(--black);
       align-self: center;
     }
-
   }
 }

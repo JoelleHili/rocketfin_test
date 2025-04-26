@@ -14,13 +14,13 @@ interface TrendingNamesResponse {
   }
 }
 
-const baseUrl = "https://yfapi.net"
+const baseUrl = 'https://yfapi.net'
 const apiKey = 'VmJTnhZRVx10CC40YEXyL3QBcmLlLJZS4WXuVSnC'
 
 export function useGetTrendingNames({ trendingList }: getTrendingNamesTypes) {
-  const [data, setData]       = useState<TrendingNamesResponse>()
+  const [data, setData] = useState<TrendingNamesResponse>()
   const [loading, setLoading] = useState(false)
-  const [error, setError]     = useState<Error | null>(null)
+  const [error, setError] = useState<Error | null>(null)
 
   const fetchData = useCallback(async (): Promise<TrendingNamesResponse> => {
     setData(undefined)
@@ -28,12 +28,15 @@ export function useGetTrendingNames({ trendingList }: getTrendingNamesTypes) {
     setError(null)
 
     try {
-      console.log("Trending to Get Names of:", trendingList)
-      const response = await fetch(`${baseUrl}/v6/finance/quote?region=US&lang=en&symbols=${encodeURIComponent(trendingList)}`, {
-        headers: { 'X-API-KEY': apiKey },
-      })
+      console.log('Trending to Get Names of:', trendingList)
+      const response = await fetch(
+        `${baseUrl}/v6/finance/quote?region=US&lang=en&symbols=${encodeURIComponent(trendingList)}`,
+        {
+          headers: { 'X-API-KEY': apiKey },
+        }
+      )
 
-      console.log("useGetTrendingNames:", response.status)
+      console.log('useGetTrendingNames:', response.status)
 
       if (!response.ok) {
         throw new Error(`API error: ${response.status}`)
@@ -51,8 +54,8 @@ export function useGetTrendingNames({ trendingList }: getTrendingNamesTypes) {
   }, [trendingList])
 
   useEffect(() => {
-      fetchData()
-    }, [fetchData])
+    fetchData()
+  }, [fetchData])
 
   return { data, loading, error, refetch: fetchData }
 }

@@ -1,1 +1,1 @@
-export {default} from "./containers/instrumentSearchContainer"
+export { default } from './containers/instrumentSearchContainer'

@@ -16,13 +16,13 @@ interface TrendingListResponse {
   }
 }
 
-const baseUrl = "https://yfapi.net"
+const baseUrl = 'https://yfapi.net'
 const apiKey = 'VmJTnhZRVx10CC40YEXyL3QBcmLlLJZS4WXuVSnC'
 
 export function useGetTrendingByRegion({ region }: getTrendingByRegionTypes) {
-  const [data, setData]       = useState<TrendingListResponse>()
+  const [data, setData] = useState<TrendingListResponse>()
   const [loading, setLoading] = useState(false)
-  const [error, setError]     = useState<Error | null>(null)
+  const [error, setError] = useState<Error | null>(null)
 
   const fetchData = useCallback(async (): Promise<TrendingListResponse> => {
     setData(undefined)

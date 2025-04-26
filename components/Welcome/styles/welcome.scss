@@ -1,8 +1,8 @@
-$base: "welcome";
+$base: 'welcome';
 
-.#{$base}{
-    display: flex;
-    color: var(--secondary);
-    gap: 16px;
-    font-size: var(--font-size-lg);
+.#{$base} {
+  display: flex;
+  color: var(--secondary);
+  gap: 16px;
+  font-size: var(--font-size-lg);
 }

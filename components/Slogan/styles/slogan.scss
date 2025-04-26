@@ -1,11 +1,11 @@
-$base: "slogan";
+$base: 'slogan';
 
-.#{$base}{
-    display: flex;
-    color: var(--secondary);
-    font-size: var(--font-size-lg);
+.#{$base} {
+  display: flex;
+  color: var(--secondary);
+  font-size: var(--font-size-lg);
 
-    &__alt{
-        color: var(--accent);
-    }
+  &__alt {
+    color: var(--accent);
+  }
 }

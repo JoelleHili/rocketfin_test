@@ -15,13 +15,15 @@ interface StockChartResponse {
   }
 }
 
-const baseUrl = "https://yfapi.net"
+const baseUrl = 'https://yfapi.net'
 const apiKey = 'VmJTnhZRVx10CC40YEXyL3QBcmLlLJZS4WXuVSnC'
 
-export function useGetInstrumentByTicker({ ticker }: getInstrumentByTickerTypes) {
-  const [data, setData]       = useState<StockChartResponse>()
+export function useGetInstrumentByTicker({
+  ticker,
+}: getInstrumentByTickerTypes) {
+  const [data, setData] = useState<StockChartResponse>()
   const [loading, setLoading] = useState(false)
-  const [error, setError]     = useState<Error | null>(null)
+  const [error, setError] = useState<Error | null>(null)
 
   const fetchData = useCallback(async (): Promise<StockChartResponse> => {
     setData(undefined)

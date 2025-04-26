@@ -2,7 +2,7 @@
 
 import { InstrumentSearchResultEmptyTypes } from "../types/instrumentSearchTypes"
 
-const InstrumentSearchResultEmpty = ({message}:InstrumentSearchResultEmptyTypes) => (
+const InstrumentSearchResultEmpty = ({ message }: InstrumentSearchResultEmptyTypes) => (
     <div className="instrument-search__empty">
         <span>{message}</span>
     </div>

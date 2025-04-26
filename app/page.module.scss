@@ -11,7 +11,7 @@
   color: var(--secondary);
   margin-bottom: $spacing-lg;
   text-align: center;
-  
+
   @include respond-to(md) {
     font-size: $font-size-4xl;
   }
@@ -20,7 +20,7 @@
 .buttons {
   @include flex(row, center, center, $spacing-md);
   margin-bottom: $spacing-lg;
-  
+
   @include respond-to(sm) {
     flex-direction: column;
   }

@@ -1,1 +1,1 @@
-export {default} from "./components/slogan"
+export { default } from './components/slogan'

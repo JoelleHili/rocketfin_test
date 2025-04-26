@@ -1,1 +1,1 @@
-export {default} from "./components/welcome"
+export { default } from './components/welcome'

@@ -20,8 +20,8 @@ export default function RootLayout({
       <body className='layout'>
         <div className='layout__header'>
           <Image src={logo} alt="rocketfin" className='layout__header__logo' width={140} height={36} />
-          <Slogan/>
-          <Welcome/>
+          <Slogan />
+          <Welcome />
         </div>
 
         <div className='layout__body'>

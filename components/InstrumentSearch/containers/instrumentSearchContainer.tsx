@@ -66,14 +66,14 @@ const InstrumentSearchContainer = ({ ticker }: InstrumentSearchContainerTypes) =
 
     useEffect(() => {
         setHoldingAmount(holdingsHandler.getHoldingAmount(debounceValue));
-        
+
         const unsubscribe = holdingsHandler.subscribe(() => {
-          const newAmount = holdingsHandler.getHoldingAmount(debounceValue);
-          setHoldingAmount(newAmount);
+            const newAmount = holdingsHandler.getHoldingAmount(debounceValue);
+            setHoldingAmount(newAmount);
         });
-        
+
         return unsubscribe;
-      }, [debounceValue, holdingsHandler])
+    }, [debounceValue, holdingsHandler])
 
     useEffect(() => {
         if (debounceValue.length) { refetch() }

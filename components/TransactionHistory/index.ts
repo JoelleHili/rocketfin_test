@@ -1,1 +1,1 @@
-export {default} from "./containers/transactionHistoryContainer"
+export { default } from './containers/transactionHistoryContainer'

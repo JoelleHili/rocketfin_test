@@ -21,7 +21,8 @@ $base: 'transaction-history';
       gap: 16px;
     }
 
-    &__symbol, &__type {
+    &__symbol,
+    &__type {
       padding: 4px 8px;
       background-color: var(--black);
       color: var(--secondary);
@@ -38,19 +39,20 @@ $base: 'transaction-history';
       width: 80px;
     }
 
-    &__bought{
+    &__bought {
       background-color: var(--success);
     }
 
-    &__sold{
+    &__sold {
       background-color: var(--error);
     }
 
-    &__name,  &__amount{
+    &__name,
+    &__amount {
       color: var(--black);
     }
 
-    &__amount{
+    &__amount {
       width: 40px;
       text-align: end;
     }

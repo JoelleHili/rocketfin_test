@@ -18,7 +18,7 @@ $base: 'transaction';
     border-radius: 8px;
     padding: 8px;
 
-    &:focus{
+    &:focus {
       outline: none;
     }
   }
@@ -33,7 +33,7 @@ $base: 'transaction';
     padding: 4px 8px;
     width: 80px;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }

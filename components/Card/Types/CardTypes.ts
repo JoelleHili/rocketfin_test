@@ -1,5 +1,5 @@
 export interface CardTypes {
-    title: string
-    child: React.ReactNode
-    className?: string
+  title: string
+  child: React.ReactNode
+  className?: string
 }

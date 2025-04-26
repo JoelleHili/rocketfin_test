@@ -5,7 +5,7 @@ import TransactionHistoryList from "../components/transactionHistoryList"
 
 const TransactionHistoryContainer = () => {
 
-    const transactionHistory = TransactionHistory.getInstance() 
+    const transactionHistory = TransactionHistory.getInstance()
 
     return (
         <div className="transaction-history widget widget__full">

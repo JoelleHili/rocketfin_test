@@ -26,10 +26,10 @@ $base: 'sidebar';
     border-radius: 8px;
     transition-duration: 0.3s;
 
-    &__selected{
-        box-shadow: var(--selected-sidebar-shadow);
-        transition-duration: 0.3s;
-        transition-delay: 0.05s;
+    &__selected {
+      box-shadow: var(--selected-sidebar-shadow);
+      transition-duration: 0.3s;
+      transition-delay: 0.05s;
     }
   }
 }

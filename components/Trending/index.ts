@@ -1,1 +1,1 @@
-export {default} from "./containers/trendingContainer"
+export { default } from './containers/trendingContainer'

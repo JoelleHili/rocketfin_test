@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 const Search = () => {
 
   const searchParams = useSearchParams();
-  
+
   const ticker = searchParams.get('ticker');
 
   return (

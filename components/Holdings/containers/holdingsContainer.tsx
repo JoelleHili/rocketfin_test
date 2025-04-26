@@ -5,7 +5,7 @@ import HoldingsHandler from "@/classes/holdingsHandler"
 
 const HoldingsContainer = () => {
 
-    const holdings = HoldingsHandler.getInstance() 
+    const holdings = HoldingsHandler.getInstance()
 
     return (
         <div className="holdings widget widget__half">

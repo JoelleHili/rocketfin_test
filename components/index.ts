@@ -1,8 +1,8 @@
-export {default as Card} from "./Card"
-export {default as Holdings} from "./Holdings"
-export {default as InstrumentSearch} from "./InstrumentSearch"
-export {default as Sidebar} from "./Sidebar"
-export {default as Slogan} from "./Slogan"
-export {default as Trending} from "./Trending"
-export {default as Welcome} from "./Welcome"
-export {default as TransactionHistory} from "./TransactionHistory"
+export { default as Card } from './Card'
+export { default as Holdings } from './Holdings'
+export { default as InstrumentSearch } from './InstrumentSearch'
+export { default as Sidebar } from './Sidebar'
+export { default as Slogan } from './Slogan'
+export { default as Trending } from './Trending'
+export { default as Welcome } from './Welcome'
+export { default as TransactionHistory } from './TransactionHistory'

@@ -1,13 +1,13 @@
 @forward 'colors';
 @forward 'variables';
 @forward 'mixins';
-@forward "layout";
+@forward 'layout';
 
-@use "../components/InstrumentSearch/styles/instrumentSearch.scss";
-@use "../components/InstrumentSearch/styles/transaction.scss";
-@use "../components/Sidebar/Styles/sidebar.scss";
-@use "../components/Trending/styles/trending.scss";
-@use "../components/Welcome/styles/welcome.scss";
-@use "../components/Slogan/styles/slogan.scss";
-@use "../components/Holdings/styles/holdings.scss";
-@use "../components/TransactionHistory/styles/transactionHistory.scss";
+@use '../components/InstrumentSearch/styles/instrumentSearch.scss';
+@use '../components/InstrumentSearch/styles/transaction.scss';
+@use '../components/Sidebar/Styles/sidebar.scss';
+@use '../components/Trending/styles/trending.scss';
+@use '../components/Welcome/styles/welcome.scss';
+@use '../components/Slogan/styles/slogan.scss';
+@use '../components/Holdings/styles/holdings.scss';
+@use '../components/TransactionHistory/styles/transactionHistory.scss';
