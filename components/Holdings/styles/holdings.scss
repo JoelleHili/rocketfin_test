@@ -42,6 +42,7 @@ $base: 'holdings';
       color: var(--secondary);
       border-radius: 8px;
       align-self: center;
+      width: 64px;
     }
 
     &__name, &__amount {

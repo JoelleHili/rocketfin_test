@@ -26,6 +26,15 @@ $base: 'transaction-history';
       background-color: var(--black);
       color: var(--secondary);
       border-radius: 8px;
+      width: 64px;
+    }
+
+    &__symbol {
+      width: 64px;
+    }
+
+    &__type {
+      width: 80px;
     }
 
     &__bought{
