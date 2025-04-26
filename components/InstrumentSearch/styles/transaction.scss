@@ -1,0 +1,40 @@
+$base: 'transaction';
+
+.#{$base} {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 8px;
+  padding-top: 16px;
+  align-items: center;
+
+  &__input {
+    -webkit-appearance: none;
+    appearance: none;
+
+    height: 40px;
+    width: 80px;
+    border: 0px;
+    border-radius: 8px;
+    padding: 8px;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  &__submit {
+    font-size: var(--font-size-sm);
+    color: var(--secondary);
+    background-color: var(--accent);
+    box-shadow: var(--selected-sidebar-shadow);
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px 8px;
+    width: 80px;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}

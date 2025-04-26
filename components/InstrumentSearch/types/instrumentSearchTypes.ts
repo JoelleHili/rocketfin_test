@@ -7,6 +7,9 @@ export interface InstrumentSearchResultTypes {
     regularMarketDayHigh: number
     regularMarketDayLow: number
     fullExchangeName: string
+    currentholdings: number
+    buy: React.ReactNode
+    sell: React.ReactNode
 }
 
 export interface InstrumentSearchResultEmptyTypes{
