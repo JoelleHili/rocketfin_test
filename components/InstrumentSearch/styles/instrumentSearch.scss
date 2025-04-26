@@ -33,6 +33,11 @@ $base: 'instrument-search';
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      &__text{
+        height: 100%;
+        align-content: center;
+      }
     }
   }
 
