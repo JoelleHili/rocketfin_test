@@ -4,12 +4,16 @@ interface HoldingTypes {
   amount: number
 }
 
+type ChangeListener = () => void
+
 class HoldingsHandler {
   private static instance: HoldingsHandler
-  private holdings: Map<string, HoldingTypes>
+  private holdings: HoldingTypes[] = []
+  private readonly STORAGE_KEY = 'user_holdings'
+  private changeListeners: ChangeListener[] = []
 
   private constructor() {
-    this.holdings = new Map<string, HoldingTypes>()
+    this.load()
   }
 
   public static getInstance(): HoldingsHandler {
@@ -23,8 +27,32 @@ class HoldingsHandler {
     return Array.from(this.holdings.values())
   }
 
+  public getHoldingAmount(symbol: string): number {
+    const holding = this.holdings.find(
+      (x) => x.symbol.toUpperCase() === symbol.toUpperCase()
+    )
+
+    return holding?.amount || 0
+  }
+
+  public addHolding({ symbol, shortName, amount }: HoldingTypes): void {
+    const holding = this.holdings.find(
+      (x) => x.symbol.toUpperCase() === symbol.toUpperCase()
+    )
+
+    if (!holding) {
+      this.holdings.push({ symbol, shortName, amount })
+    } else {
+      holding.amount = holding.amount + amount
+    }
+
+    this.save()
+  }
+
   public canRemove(symbol: string, amount: number): boolean {
-    const holding = this.holdings.get(symbol.toUpperCase())
+    const holding = this.holdings.find(
+      (x) => x.symbol.toUpperCase() === symbol.toUpperCase()
+    )
 
     if (!holding) {
       return false
@@ -38,11 +66,12 @@ class HoldingsHandler {
       throw new Error('Amount must be greater than zero')
     }
 
-    const upperSymbol = symbol.toUpperCase()
-    const holding = this.holdings.get(upperSymbol)
+    const holding = this.holdings.find(
+      (x) => x.symbol.toUpperCase() === symbol.toUpperCase()
+    )
 
     if (!holding) {
-      throw new Error(`No holding found for symbol ${upperSymbol}`)
+      throw new Error(`No holding found for symbol ${symbol.toUpperCase()}`)
     }
 
     if (holding.amount < amount) {
@@ -54,7 +83,52 @@ class HoldingsHandler {
     holding.amount -= amount
 
     if (holding.amount === 0) {
-      this.holdings.delete(upperSymbol)
+      this.holdings
+        .filter((x) => x.symbol.toUpperCase() === symbol.toUpperCase())
+        .pop()
+    }
+
+    this.save()
+  }
+
+  private load(): void {
+    try {
+      const storedData = localStorage.getItem(this.STORAGE_KEY)
+
+      if (storedData) {
+        const parsed = JSON.parse(storedData)
+        this.holdings = parsed.map((h: any) => ({
+          ...h,
+        }))
+      }
+    } catch (error) {
+      console.error('Failed to load transaction history from storage:', error)
+      this.holdings = []
+    }
+  }
+
+  private save(): void {
+    try {
+      const serializable = this.holdings.map((h) => ({
+        ...h,
+      }))
+
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(serializable))
+      this.notifyChangeListeners()
+    } catch (error) {
+      console.error('Failed to save transaction history to storage:', error)
+    }
+  }
+
+  private notifyChangeListeners(): void {
+    this.changeListeners.forEach((listener) => listener())
+  }
+
+  public subscribe(listener: ChangeListener): () => void {
+    this.changeListeners.push(listener)
+
+    return () => {
+      this.changeListeners = this.changeListeners.filter((l) => l !== listener)
     }
   }
 }
