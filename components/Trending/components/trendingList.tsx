@@ -5,7 +5,7 @@ import TrendingEntry from "./trendingEntry"
 
 const TrendingList = ({ list }: TrendingListTypes) => (
     <ul className="trending__list">{list.map((item) =>
-        <li key={item.symbol}>
+        <li key={`trending_${item.symbol}`}>
             <TrendingEntry symbol={item.symbol} displayName={item.displayName} />
         </li>)}
     </ul>

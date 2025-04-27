@@ -10,17 +10,24 @@ import TrendingMessage from "../components/trendingMessage"
 const InstrumentSearchContainer = () => {
 
     const { data, error } = useGetTrendingByRegion({ region: "US" })
-    const { data: namesData, loading: loading, error: namesError } = useGetTrendingNames({ trendingList: data?.finance.result[0].quotes.slice(0, 10).map((item: { symbol: string }) => item.symbol).join(',') || ""})
+
+    const symbolsString = data?.finance?.result?.[0]?.quotes?.slice(0, 10)?.map(
+        (item: { symbol: string }) => item.symbol
+    )?.join(',') || ""
+
+    const { data: namesData, loading: loading, error: namesError } = useGetTrendingNames({
+        trendingList: symbolsString
+    })
+
     const [trendingList, setTrendingList] = useState<Array<TrendingTypes>>()
 
     useEffect(() => {
         setTrendingList([])
 
-        if (namesData?.quoteResponse.result) {
-            setTrendingList(namesData?.quoteResponse.result)
+        if (namesData?.quoteResponse?.result) {
+            setTrendingList(namesData.quoteResponse.result)
         }
-    }, [data?.finance.result, namesData?.quoteResponse.result])
-
+    }, [data?.finance?.result, namesData?.quoteResponse?.result])
     return (
         <div className="trending widget widget__half">
             <h1>Trending In The Market</h1>

@@ -19,6 +19,7 @@ $base: 'transaction-history';
       display: flex;
       flex-direction: row;
       gap: 16px;
+      width: 50%;
     }
 
     &__symbol,
@@ -50,6 +51,7 @@ $base: 'transaction-history';
     &__name,
     &__amount {
       color: var(--black);
+      align-self: center;
     }
 
     &__amount {
