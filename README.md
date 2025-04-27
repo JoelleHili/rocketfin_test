@@ -1,17 +1,47 @@
-## Getting Started
+# RocketFin Test
 
-First, update the dependencies:
+This project is my entry for the frontend RocketFin interview test. Hopefully everything is in order and beyond expectations!
+
+
+## Run Locally
+
+Clone the project
 
 ```bash
-npm install
+  git clone https://github.com/JoelleHili/rocketfin_test.git
 ```
 
-Then, run the development server:
+Go to the project directory
 
 ```bash
-npm run dev
+  cd rocketfin_test
 ```
 
-## Accesing the Project Once Running
+Install dependencies
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+## Features
+
+Home Page:
+- See your holdings (done locally)
+- See your transaction history (done locally)
+- Get Trending Stocks
+
+Search Page:
+- Get Stock Info (via API)
+- Buy and Sell Stocks (done locally)
+
+
+## API
+
+The API used is the YH Finance API (The one provided for the test): https://financeapi.net/
+It has 100 queries max per day
