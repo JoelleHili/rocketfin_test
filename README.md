@@ -23,7 +23,17 @@ Install dependencies
   npm install
 ```
 
-Start the server
+### Start Project using Dev
+
+```bash
+  npm run dev
+```
+
+### Start Project using Start
+
+```bash
+  npm run build
+```
 
 ```bash
   npm run start
